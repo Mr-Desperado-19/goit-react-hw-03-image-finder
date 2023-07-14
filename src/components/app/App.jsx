@@ -16,35 +16,41 @@ class App extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.searchQuery !== this.state.searchQuery) {
-      this.setState({ page: 1, images: [] });
-      this.fetchImages();
-    }
-
-    if (prevState.page !== this.state.page) {
-      this.fetchImages();
+    const { searchQuery, page } = this.state
+    
+    if (
+      prevState.page !== this.state.page ||
+      prevState.searchQuery !== this.state.searchQuery
+    ) {
+      this.fetchImagesApp(searchQuery, page);
     }
   }
 
   onChangeQuery = query => {
-    this.setState({ searchQuery: query });
+    this.setState({ searchQuery: query, page: 1, images: [] });
   };
 
-  fetchImages = () => {
+  fetchImages = (searchQuery, page) => {
     const { searchQuery, page } = this.state;
     const options = { query: searchQuery, page };
 
     this.setState({ isLoading: true });
 
-    fetchImages(options)
+    fetchImages(searchQuery, page)
       .then(images => {
         this.setState(prevState => ({
-          images: [...prevState.images, ...images],
-          page: prevState.page + 1,
+          images: [...prevState.images, ...images.hits],
+          total: images.totalHits,
         }));
       })
       .catch(error => this.setState({ error }))
       .finally(() => this.setState({ isLoading: false }));
+  };
+
+  btnClick = () => {
+    this.setState(prevState => ({
+      page: prevState.page + 1,
+    }));
   };
 
   openModal = image => {
@@ -68,7 +74,7 @@ class App extends Component {
 
         {isLoading && <Button label="Loading..." disabled />}
         {!isLoading && images.length > 0 && (
-          <Button label="Load more" onClick={this.fetchImages} />
+          <Button label="Load more" onClick={this.btnClick} />
         )}
 
         {selectedImage && (

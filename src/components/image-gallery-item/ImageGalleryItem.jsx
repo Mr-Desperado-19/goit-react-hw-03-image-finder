@@ -14,12 +14,12 @@ class ImageGalleryItem extends Component {
   };
 
   render() {
-    const { webformatURL, tags } = this.props;
+    const { src, tags } = this.props;
 
     return (
       <li className="ImageGalleryItem">
         <img
-          src={webformatURL}
+          src={src}
           alt={tags}
           className="ImageGalleryItem-image"
           onClick={this.handleClick}

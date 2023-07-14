@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import ImageGalleryItem from '../image-gallery-item';
 
-const ImageGallery = ({ images, onImageClick }) => (
+const ImageGallery = ({ images, onSelect }) => (
   <ul className="ImageGallery">
     {images.map(({ id, webformatURL, largeImageURL }) => (
       <ImageGalleryItem
@@ -9,7 +9,7 @@ const ImageGallery = ({ images, onImageClick }) => (
         src={webformatURL}
         alt={id}
         largeImage={largeImageURL}
-        onClick={() => onImageClick(largeImageURL)}
+        onClick={() => onSelect(largeImageURL)}
       />
     ))}
   </ul>
