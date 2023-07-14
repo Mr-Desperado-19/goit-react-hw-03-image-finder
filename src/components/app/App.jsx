@@ -31,9 +31,6 @@ class App extends Component {
   };
 
   fetchImages = (searchQuery, page) => {
-    const { searchQuery, page } = this.state;
-    const options = { query: searchQuery, page };
-
     this.setState({ isLoading: true });
 
     fetchImages(searchQuery, page)
