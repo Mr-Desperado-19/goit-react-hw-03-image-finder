@@ -10,7 +10,7 @@ const ImageGallery = ({ images, onSelect }) => (
         src={webformatURL}
         alt={id}
         largeImage={largeImageURL}
-        onClick={() => onSelect(largeImageURL)}
+        onClick={onSelect}
       />
     ))}
   </ul>

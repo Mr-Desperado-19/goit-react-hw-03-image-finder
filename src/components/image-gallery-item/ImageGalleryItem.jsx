@@ -10,8 +10,8 @@ class ImageGalleryItem extends Component {
   };
 
   handleClick = () => {
-    const { webformatURL, tags } = this.props;
-    this.props.onSelect({ largeImageURL: webformatURL, tags });
+    const { largeImage } = this.props;
+    this.props.onClick(largeImage);
   };
 
   render() {
