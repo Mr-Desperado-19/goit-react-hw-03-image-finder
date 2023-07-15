@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import ImageGalleryItem from '../image-gallery-item';
 
 const ImageGallery = ({ images, onSelect }) => (
-  <ul className="ImageGallery">
+  <ul className="image-gallery">
     {images.map(({ id, webformatURL, largeImageURL }) => (
       <ImageGalleryItem
         key={id}

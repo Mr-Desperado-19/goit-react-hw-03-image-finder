@@ -17,7 +17,7 @@ class ImageGalleryItem extends Component {
     const { src, tags } = this.props;
 
     return (
-      <li className="ImageGalleryItem">
+      <li className="Image-Gallery_Item">
         <img
           src={src}
           alt={tags}

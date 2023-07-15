@@ -12,6 +12,6 @@ export const fetchImages = (query, page) => {
 
       throw new Error('Error fetching images');
     })
-    .then(({ hits }) => hits)
+    .then(res => res)
     .catch(error => console.log(error));
 };
