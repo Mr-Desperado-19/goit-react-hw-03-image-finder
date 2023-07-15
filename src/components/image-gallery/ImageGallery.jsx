@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import ImageGalleryItem from '../image-gallery-item';
+import "./ImageGallery.scss"
 
 const ImageGallery = ({ images, onSelect }) => (
   <ul className="image-gallery">

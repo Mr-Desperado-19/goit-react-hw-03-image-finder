@@ -4,6 +4,7 @@ import ImageGallery from '../image-gallery';
 import Button from '../button';
 import Modal from '../modal';
 import { fetchImages } from '../../services/api';
+import "./App.scss"
 
 class App extends Component {
   state = {
@@ -62,7 +63,7 @@ class App extends Component {
     const { images, selectedImage, isLoading, error } = this.state;
 
     return (
-      <div>
+      <div className='app-container'>
         <Searchbar onSubmit={this.onChangeQuery} />
 
         {images.length > 0 && (

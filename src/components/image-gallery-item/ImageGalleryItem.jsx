@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import "./ImageGalleryItem.scss"
 
 class ImageGalleryItem extends Component {
   static propTypes = {
@@ -17,11 +18,11 @@ class ImageGalleryItem extends Component {
     const { src, tags } = this.props;
 
     return (
-      <li className="Image-Gallery_Item">
+      <li className="image-gallery-item">
         <img
           src={src}
           alt={tags}
-          className="ImageGalleryItem-image"
+          className="image-gallery-item-image"
           onClick={this.handleClick}
         />
       </li>
