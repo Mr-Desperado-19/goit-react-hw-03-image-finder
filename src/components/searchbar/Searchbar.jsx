@@ -44,7 +44,8 @@ class Searchbar extends Component {
             onChange={this.handleChange}
           />
           <button type="submit" className='search-form_btn'>
-            <span className='search-form_btn-label'>Search</span>
+            Search
+            {/* <span className='search-form_btn-label'>Search</span> */}
           </button>
         </form>
       </header>
