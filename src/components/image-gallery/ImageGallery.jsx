@@ -24,7 +24,7 @@ ImageGallery.propTypes = {
       largeImageURL: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  onImageClick: PropTypes.func.isRequired,
+  onSelect: PropTypes.func.isRequired,
 };
 
 export default ImageGallery;
