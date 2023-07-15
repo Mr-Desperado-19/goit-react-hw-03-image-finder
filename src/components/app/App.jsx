@@ -30,7 +30,7 @@ class App extends Component {
     this.setState({ searchQuery: query, page: 1, images: [] });
   };
 
-  fetchImages = (searchQuery, page) => {
+  fetchImagesApp = (searchQuery, page) => {
     this.setState({ isLoading: true });
 
     fetchImages(searchQuery, page)
