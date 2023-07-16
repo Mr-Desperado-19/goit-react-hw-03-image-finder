@@ -38,7 +38,7 @@ class Modal extends Component {
       <div className="overlay" onClick={this.handleBackdropClick}>
         <div className="modal">
           <img src={image} alt={"qwe"} />
-          <button type="button" onClick={onClose}>
+          <button className='close_btn' type="button" onClick={onClose}>
             Close
           </button>
         </div>
