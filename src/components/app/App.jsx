@@ -18,7 +18,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-  const query = 'CSS';
+  const query = 'CSS'; 
   const page = 1;
 
     fetchImages(query, page)
