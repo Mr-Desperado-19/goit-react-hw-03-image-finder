@@ -14,7 +14,17 @@ class App extends Component {
     selectedImage: null,
     isLoading: false,
     error: null,
+    totalHits: null,
   };
+
+  componentDidMount() {
+  const query = 'CSS';
+  const page = 1;
+
+    fetchImages(query, page)
+      .then(data => console.log(`Total hits: ${data.totalHits}`))
+      .catch(error => console.log(error));
+  }
 
   componentDidUpdate(prevProps, prevState) {
     const { searchQuery, page } = this.state
@@ -70,8 +80,7 @@ class App extends Component {
           <ImageGallery images={images} onSelect={this.openModal} />
         )}
 
-        {isLoading && <Button label="Loading..." disabled />}
-        {!isLoading && images.length > 0 && (
+        {!isLoading && images.length < this.state.total && (
           <Button label="Load more" onClick={this.btnClick} />
         )}
 
